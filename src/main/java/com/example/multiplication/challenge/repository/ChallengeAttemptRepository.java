@@ -1,5 +1,6 @@
-package com.example.multiplication.challenge;
+package com.example.multiplication.challenge.repository;
 
+import com.example.multiplication.challenge.domain.ChallengeAttempt;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -12,6 +13,6 @@ public interface ChallengeAttemptRepository extends CrudRepository<ChallengeAtte
     /**
      * @return the last 10 attempts for a given user, identified by their alias.
      */
-    @Query("SELECT a FROM ChallengeAttempt a WHERE a.user.alias = :userAlias ORDER BY a.id DESC")
+    @Query("SELECT a FROM ChallengeAttempt a WHERE a.user.alias = :userAlias ORDER BY a.id DESC LIMIT 10")
     List<ChallengeAttempt> lastAttempts(@Param("userAlias") String userAlias);
 }

@@ -1,4 +1,7 @@
-package com.example.multiplication.challenge;
+package com.example.multiplication.challenge.service;
+
+import com.example.multiplication.challenge.domain.ChallengeAttempt;
+import com.example.multiplication.challenge.dto.ChallengeAttemptDTO;
 
 import java.util.List;
 

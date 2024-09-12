@@ -1,5 +1,8 @@
 package com.example.multiplication.challenge;
 
+import com.example.multiplication.challenge.domain.Challenge;
+import com.example.multiplication.challenge.service.ChallengeGeneratorService;
+import com.example.multiplication.challenge.service.ChallengeGeneratorServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

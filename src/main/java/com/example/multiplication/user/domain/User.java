@@ -1,4 +1,4 @@
-package com.example.multiplication.user;
+package com.example.multiplication.user.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

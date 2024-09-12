@@ -1,5 +1,6 @@
-package com.example.multiplication.user;
+package com.example.multiplication.user.repository;
 
+import com.example.multiplication.user.domain.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

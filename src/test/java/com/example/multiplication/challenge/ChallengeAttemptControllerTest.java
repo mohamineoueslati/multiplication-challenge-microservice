@@ -1,6 +1,10 @@
 package com.example.multiplication.challenge;
 
-import com.example.multiplication.user.User;
+import com.example.multiplication.challenge.controller.ChallengeAttemptController;
+import com.example.multiplication.challenge.domain.ChallengeAttempt;
+import com.example.multiplication.challenge.dto.ChallengeAttemptDTO;
+import com.example.multiplication.challenge.service.ChallengeService;
+import com.example.multiplication.user.domain.User;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +57,7 @@ public class ChallengeAttemptControllerTest {
     }
 
     @Test
-    void postInvalidResult() throws Exception {
+    public void postInvalidResult() throws Exception {
         // given an attempt with invalid input data
         ChallengeAttemptDTO attemptDTO = new ChallengeAttemptDTO(2000, -70, "amine", 1);
         // when

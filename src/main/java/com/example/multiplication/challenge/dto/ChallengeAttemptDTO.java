@@ -1,4 +1,4 @@
-package com.example.multiplication.challenge;
+package com.example.multiplication.challenge.dto;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

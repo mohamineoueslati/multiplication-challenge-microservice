@@ -1,4 +1,4 @@
-package com.example.multiplication.challenge;
+package com.example.multiplication.challenge.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

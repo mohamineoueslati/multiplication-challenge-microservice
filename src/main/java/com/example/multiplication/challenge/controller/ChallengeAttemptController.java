@@ -1,5 +1,8 @@
-package com.example.multiplication.challenge;
+package com.example.multiplication.challenge.controller;
 
+import com.example.multiplication.challenge.domain.ChallengeAttempt;
+import com.example.multiplication.challenge.dto.ChallengeAttemptDTO;
+import com.example.multiplication.challenge.service.ChallengeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

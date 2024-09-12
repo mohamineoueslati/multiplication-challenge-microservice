@@ -1,5 +1,7 @@
-package com.example.multiplication.challenge;
+package com.example.multiplication.challenge.controller;
 
+import com.example.multiplication.challenge.domain.Challenge;
+import com.example.multiplication.challenge.service.ChallengeGeneratorService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +18,7 @@ public class ChallengeController {
 
     @GetMapping("random")
     public Challenge getRandomChallenge() {
-        Challenge challenge = challengeGeneratorService.randomChallenge();
-        log.info("Generating a random challenge: {}", challenge);
-        return challenge;
+        return challengeGeneratorService.randomChallenge();
     }
 
 }

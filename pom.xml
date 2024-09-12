@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>multiplication-server</artifactId>
+    <artifactId>multiplication-challenge-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>MultiplicationChallengeApp</name>
     <description>Multiplication Challenge App</description>

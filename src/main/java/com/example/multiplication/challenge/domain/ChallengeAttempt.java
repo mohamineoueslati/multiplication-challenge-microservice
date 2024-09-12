@@ -1,6 +1,6 @@
-package com.example.multiplication.challenge;
+package com.example.multiplication.challenge.domain;
 
-import com.example.multiplication.user.User;
+import com.example.multiplication.user.domain.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

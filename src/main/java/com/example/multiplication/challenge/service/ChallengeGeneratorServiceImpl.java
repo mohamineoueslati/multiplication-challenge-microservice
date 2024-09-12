@@ -1,10 +1,13 @@
-package com.example.multiplication.challenge;
+package com.example.multiplication.challenge.service;
 
+import com.example.multiplication.challenge.domain.Challenge;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
 @Service
+@Slf4j
 public class ChallengeGeneratorServiceImpl implements ChallengeGeneratorService {
 
     private final static int MINIMUM_FACTOR = 11;
@@ -16,13 +19,15 @@ public class ChallengeGeneratorServiceImpl implements ChallengeGeneratorService 
         this.random = new Random();
     }
 
-    protected ChallengeGeneratorServiceImpl(final Random random) {
+    public ChallengeGeneratorServiceImpl(final Random random) {
         this.random = random;
     }
 
     @Override
     public Challenge randomChallenge() {
-        return new Challenge(next(), next());
+        Challenge challenge = new Challenge(next(), next());
+        log.info("Generating a random challenge: {}", challenge);
+        return challenge;
     }
 
     private int next() {

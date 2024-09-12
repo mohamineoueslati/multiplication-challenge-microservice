@@ -1,7 +1,12 @@
 package com.example.multiplication.challenge;
 
-import com.example.multiplication.user.User;
-import com.example.multiplication.user.UserRepository;
+import com.example.multiplication.challenge.domain.ChallengeAttempt;
+import com.example.multiplication.challenge.dto.ChallengeAttemptDTO;
+import com.example.multiplication.challenge.repository.ChallengeAttemptRepository;
+import com.example.multiplication.challenge.service.ChallengeService;
+import com.example.multiplication.challenge.service.ChallengeServiceImpl;
+import com.example.multiplication.user.domain.User;
+import com.example.multiplication.user.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

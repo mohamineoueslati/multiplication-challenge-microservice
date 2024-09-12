@@ -1,4 +1,6 @@
-package com.example.multiplication.challenge;
+package com.example.multiplication.challenge.service;
+
+import com.example.multiplication.challenge.domain.Challenge;
 
 public interface ChallengeGeneratorService {
     /**

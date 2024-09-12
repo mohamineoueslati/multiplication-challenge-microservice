@@ -1,7 +1,10 @@
-package com.example.multiplication.challenge;
+package com.example.multiplication.challenge.service;
 
-import com.example.multiplication.user.User;
-import com.example.multiplication.user.UserRepository;
+import com.example.multiplication.challenge.domain.ChallengeAttempt;
+import com.example.multiplication.challenge.dto.ChallengeAttemptDTO;
+import com.example.multiplication.challenge.repository.ChallengeAttemptRepository;
+import com.example.multiplication.user.domain.User;
+import com.example.multiplication.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
