@@ -15,8 +15,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.assertj.core.api.BDDAssertions.then;
-import static org.mockito.BDDMockito.given;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 @ExtendWith(SpringExtension.class)
@@ -55,7 +55,7 @@ public class ChallengeAttemptControllerTest {
     @Test
     void postInvalidResult() throws Exception {
         // given an attempt with invalid input data
-        ChallengeAttemptDTO attemptDTO = new ChallengeAttemptDTO(2000, -70, "john", 1);
+        ChallengeAttemptDTO attemptDTO = new ChallengeAttemptDTO(2000, -70, "amine", 1);
         // when
         MockHttpServletResponse response = mvc.perform(
                 post("/attempts")
