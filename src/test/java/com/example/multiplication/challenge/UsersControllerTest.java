@@ -1,6 +1,6 @@
 package com.example.multiplication.challenge;
 
-import com.example.multiplication.challenge.controller.UserController;
+import com.example.multiplication.user.controller.UserController;
 import com.example.multiplication.user.domain.User;
 import com.example.multiplication.user.repository.UserRepository;
 import org.junit.jupiter.api.Test;

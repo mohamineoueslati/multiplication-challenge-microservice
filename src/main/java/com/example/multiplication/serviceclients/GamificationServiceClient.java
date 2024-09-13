@@ -35,7 +35,7 @@ public class GamificationServiceClient {
                     attempt.getUser().getAlias()
             );
             ResponseEntity<String> response =
-                    restTemplate.postForEntity(gamificationHostUrl, challengeSolved, String.class);
+                    restTemplate.postForEntity(gamificationHostUrl + "/attempts", challengeSolved, String.class);
             log.info("Gamification service response: {}", response.getBody());
             return response.getStatusCode().is2xxSuccessful();
         } catch (Exception e) {

@@ -1,4 +1,4 @@
-package com.example.multiplication.challenge.controller;
+package com.example.multiplication.user.controller;
 
 import com.example.multiplication.user.domain.User;
 import com.example.multiplication.user.repository.UserRepository;
