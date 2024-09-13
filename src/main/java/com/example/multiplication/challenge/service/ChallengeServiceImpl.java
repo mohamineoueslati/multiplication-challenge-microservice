@@ -3,6 +3,7 @@ package com.example.multiplication.challenge.service;
 import com.example.multiplication.challenge.domain.ChallengeAttempt;
 import com.example.multiplication.challenge.dto.ChallengeAttemptDTO;
 import com.example.multiplication.challenge.repository.ChallengeAttemptRepository;
+import com.example.multiplication.serviceclients.GamificationServiceClient;
 import com.example.multiplication.user.domain.User;
 import com.example.multiplication.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +19,7 @@ public class ChallengeServiceImpl implements ChallengeService {
 
     private final UserRepository userRepository;
     private final ChallengeAttemptRepository attemptRepository;
+    private final GamificationServiceClient gameClient;
 
     @Override
     public ChallengeAttempt verifyAttempt(ChallengeAttemptDTO attemptDTO) {
@@ -37,7 +39,10 @@ public class ChallengeServiceImpl implements ChallengeService {
                 isCorrect
         );
         // Stores the attempt
-        return attemptRepository.save(challengeAttempt);
+        var storedAttempt = attemptRepository.save(challengeAttempt);
+        boolean status = gameClient.sendAttempt(storedAttempt);
+        log.info("Gamification service response: {}", status);
+        return storedAttempt;
     }
 
     @Override
