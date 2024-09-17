@@ -2,10 +2,10 @@ package com.example.multiplication.challenge;
 
 import com.example.multiplication.challenge.domain.ChallengeAttempt;
 import com.example.multiplication.challenge.dto.ChallengeAttemptDTO;
+import com.example.multiplication.challenge.event.ChallengeEventPub;
 import com.example.multiplication.challenge.repository.ChallengeAttemptRepository;
 import com.example.multiplication.challenge.service.ChallengeService;
 import com.example.multiplication.challenge.service.ChallengeServiceImpl;
-import com.example.multiplication.serviceclients.GamificationServiceClient;
 import com.example.multiplication.user.domain.User;
 import com.example.multiplication.user.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -33,14 +33,14 @@ public class ChallengeServiceTest {
     @Mock
     private ChallengeAttemptRepository attemptRepository;
     @Mock
-    private GamificationServiceClient gameClient;
+    private ChallengeEventPub challengeEventPub;
 
     @BeforeEach
     public void setUp() {
         challengeService = new ChallengeServiceImpl(
                 userRepository,
                 attemptRepository,
-                gameClient
+                challengeEventPub
         );
     }
 
@@ -56,7 +56,7 @@ public class ChallengeServiceTest {
         // verify
         verify(userRepository).save(new User("amine"));
         verify(attemptRepository).save(resultAttempt);
-        verify(gameClient).sendAttempt(resultAttempt);
+        verify(challengeEventPub).challengeSolved(resultAttempt);
     }
 
     @Test
@@ -71,7 +71,7 @@ public class ChallengeServiceTest {
         // verify
         verify(userRepository).save(new User("amine"));
         verify(attemptRepository).save(resultAttempt);
-        verify(gameClient).sendAttempt(resultAttempt);
+        verify(challengeEventPub).challengeSolved(resultAttempt);
     }
 
     @Test
@@ -89,7 +89,7 @@ public class ChallengeServiceTest {
         // verify
         verify(userRepository, never()).save(any());
         verify(attemptRepository).save(resultAttempt);
-        verify(gameClient).sendAttempt(resultAttempt);
+        verify(challengeEventPub).challengeSolved(resultAttempt);
     }
 
     @Test

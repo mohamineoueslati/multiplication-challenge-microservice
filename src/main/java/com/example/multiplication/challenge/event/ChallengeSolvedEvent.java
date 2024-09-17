@@ -1,6 +1,6 @@
-package com.example.multiplication.challenge.dto;
+package com.example.multiplication.challenge.event;
 
-public record ChallengeSolvedDTO(
+public record ChallengeSolvedEvent(
         long attemptId,
         boolean correct,
         int factorA,
